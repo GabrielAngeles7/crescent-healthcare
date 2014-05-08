@@ -1,0 +1,605 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+// bower:scss
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+// endbower
+
+
+// Palettes
+
+$blue:     #0681ab;
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+    font-family: 'Helvetica Neue';
+}
+
+img {
+    max-width: 100%;
+}
+
+// Layouts
+
+.l-container {
+    position: relative;
+}
+
+// Templates
+
+.t-header {
+    position: relative;
+    z-index: 1;
+    padding: 20px 0;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ffffff 0%, #eaeaea 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#eaeaea)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ffffff 0%,#eaeaea 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 ); /* IE6-9 */
+    @include box-shadow(0 1px 0 rgba(0,0,0,0.2));
+}
+
+.t-footer {
+    background: #373f44;
+}
+
+.t-footer-top {
+    padding: 50px 0 80px;
+}
+
+.t-footer-bottom {
+    padding: 16px 0;
+    border-top: 1px solid #1e2529;
+    background: #232a2f;
+    font-size: 11px;
+    color: #7c7f81;
+    font-family: 'DINOT-Light';
+    text-transform: uppercase;
+}
+
+.copyright {
+    float: left;
+}
+
+// Navbar
+
+.navbar-main {
+    // This is where the default menu found.
+    // So basically, it is an absolute menu with gray color scheme.
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border: 1px solid #484848;
+    border-top: 0;
+    background: #696969; /* Old browsers */
+    background: -moz-linear-gradient(top,  #696969 0%, #5a5a5a 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#696969), color-stop(100%,#5a5a5a)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #696969 0%,#5a5a5a 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #696969 0%,#5a5a5a 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #696969 0%,#5a5a5a 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #696969 0%,#5a5a5a 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#696969', endColorstr='#5a5a5a',GradientType=0 ); /* IE6-9 */
+    text-align: center;
+
+    .navbar-nav {
+        display: inline-block; // Make it align into center.
+        float: none; // For now, let's remove floating
+        margin-bottom: -5px; // Remove negative space under the menu 
+
+        li {
+            &:last-child {
+                a {
+                    border-right: 0;
+                }
+            }
+        }     
+
+        a {
+            padding: 16px 26px;
+            font-size: 12px;
+            font-family: 'DINOT-Light';
+            border-right: 1px solid #444;
+            @include box-shadow(0 1px 0 #656565 inset);
+            color: #fff;
+            text-transform: uppercase;
+
+            &:hover {
+                background: rgba(0,0,0,0.2);
+            }
+        }
+    }
+
+}
+
+.navbar-nav {
+    > li > a {
+        @include transition(all .2s linear);
+    }
+}
+
+.navbar-inverse {
+    min-height: 100%;
+    margin-bottom: 0;
+    background-color: #333333;
+
+    .navbar-nav > li > a {
+        padding: 14px;
+        font-size: 13px;
+    }
+}
+
+.navbar-secondary {
+    float: right;
+
+    ul {
+        margin-bottom: 0;
+    }
+
+    li > a {
+        color: #7c7f81;
+    }
+}
+
+// Submenu, make it flyout
+// Display dropdown menu of submenu
+
+.dropdown-submenu {
+    &:hover {
+        .dropdown-menu {
+            display: block;
+            left: -100%;
+            min-width: 600px;
+            padding: 20px;
+            background: #bc6c19;
+        }
+    }
+}
+
+// Branding
+
+.branding {
+    display: block;
+    width: 295px;
+    height: 51px;
+    background: url('../images/brand.png') no-repeat;
+    @include hide-text();
+}
+
+// Sliders
+
+.main-slider {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 490px;
+}
+
+.slider-caption {
+    position: absolute;
+    left: 50px;
+    top: 120px;
+    border: 1px solid #077398;
+    background: #0681ab;
+    border-radius: 100%;
+    width: 305px;
+    height: 305px;
+    text-align: center;
+    padding: 58px 40px;
+    @include box-shadow(0 0 0 12px rgba(0,0,0,0.05));
+    color: #fff;
+}
+
+.slider-title {
+    margin: 0 0 6px 0;
+    font-size: 28px;
+    font-family: 'DINOT-Light';
+}
+
+.slider-content {
+    margin-top: 25px;
+    line-height: 1.6;
+}
+
+.slider-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../placeholders/banner-a.png') center no-repeat;
+    background-size: cover;
+}
+
+.skin-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../images/pattern.png') repeat;
+}
+
+.slider-container {
+    position: relative;
+}
+
+.smart-object {
+    position: absolute;
+}
+
+.smart-object--main {
+    top: -80px;
+    left: 100px;
+}
+
+.smart-object--lright {
+    top: 180px;
+    right: -50px;
+    
+}
+
+// Widgets 
+
+.widget {
+    margin-bottom: 30px;
+    font-family: 'DINOT-Light';
+}
+
+.widget--brand {
+    margin-top: 80px;
+}
+
+.widget-title {
+    margin: 0 0 20px 0;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+// Search
+
+.search-form {
+    float: right;
+    width: 280px;
+    padding: 4px 0; // Makes it fit in header.
+
+    .form-control {        
+        padding: 20px;
+        border-radius: 50px;
+        font-size: 12px;
+    }
+}
+
+// Sections
+
+.section--carousel {
+    padding: 50px 0;
+
+    .block {
+        margin: 0 15px;
+    }
+}
+
+.section--featured {
+    padding: 50px 0;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+    background: #eee;
+
+    .section-title {
+        margin-top: -14px;
+        margin-bottom: 55px;
+        border-bottom: 1px solid #c1c7cb;
+        font-family: 'DINOT-Light';
+        color: #586d7b;
+        text-transform: uppercase;
+        text-align: center;
+
+        span {
+            display: inline-block;
+            position: relative;
+            top: 14px;
+            padding: 0 20px;
+            background: #eee;
+        }
+    }
+}
+
+.section--copy {
+    position: relative;
+    padding: 60px 50px;
+    background: url('../images/pattern3.png') center top repeat;
+
+    .section-title {
+        max-width: 1000px;
+        margin: 0 auto 30px;
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-bottom: 35px;
+        border-bottom: 1px solid #888888;
+        font-family: 'DINOT-Light';
+        font-size: 30px;
+        color: #fff;
+        text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+        text-align: center;
+    }
+
+    .section-content {
+        padding: 0 80px;
+        font-size: 16px;
+        font-family: 'DINOT-Light';
+        text-align: center;
+    }
+
+    .copy {
+        position: relative;
+        z-index: 1;
+        color: #fff;
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        top: -66px;
+        left: 0;
+        width: 100%;
+        height: 66px;
+        background: url('../images/bg-copy.png') center top no-repeat;
+    }
+}
+
+
+// Commons - Contact
+
+.contact-define {
+    float: left;
+    margin-right: 20px;
+    padding: 6px 0;
+    font-size: 27px;
+    color: #0b6d8e;
+}
+
+// Commons - Preloader
+
+#preloader {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#fff; // change if the mask should have another color then white
+    z-index:99999;
+}
+
+
+.spinner {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: calc(50% - 10px);
+    top: calc(50% - 10px);
+    pointer-events: none;
+    border: 2px solid #0681ab;
+    border-radius: 100%;
+    transition: opacity .4s;
+    -webkit-animation: rotate .8s linear infinite;
+    animation: rotate .8s linear infinite;
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: -3px;
+        top: -3px;
+        width: 8px;
+        height: 8px;
+        background: #fff;
+    }
+}
+
+// Commons - List
+
+.list-spread {
+    padding-left: 0;
+    list-style: none;
+
+    a {
+        display: block;
+        padding: 8px 0;
+        color: #859cae;
+        border-bottom: 1px solid #3f484f;
+        @include box-shadow(0 1px 0 #32393e);
+        @include transition(all .2s linear);
+
+        &:hover {
+            padding-left: 4px;
+            color: #e0ecf0;
+            text-decoration: none;
+        }
+    }
+}
+
+// Products
+
+.block {
+    border-radius: 6px;
+
+    img {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .block-title {
+        margin: 0;
+        padding: 20px;
+        font-family: 'DINOT-Light';
+        font-size: 15px;
+        color: #6e7179;
+        text-transform: uppercase;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .block-code {
+        display: block;
+        padding-top: 2px;
+        font-size: 14px;
+        color: #a1aab1;
+    }
+
+    a {
+        &:hover {
+            text-decoration: none; 
+            
+            .block-code {
+                color: #fff;
+            }
+
+            .block-title {
+                background: $blue;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.block--bordered {
+    img {
+        border-bottom: 1px solid #ddd;
+    }
+}
+
+/* 
+ *  Core Owl Carousel CSS File
+ *  v1.3.2
+ */
+
+/* clearfix */
+.owl-carousel .owl-wrapper:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+/* display none until init */
+.owl-carousel{
+    display: none;
+    position: relative;
+    width: 100%;
+    -ms-touch-action: pan-y;
+}
+.owl-carousel .owl-wrapper{
+    display: none;
+    position: relative;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+}
+.owl-carousel .owl-wrapper-outer{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.owl-carousel .owl-wrapper-outer.autoHeight{
+    -webkit-transition: height 500ms ease-in-out;
+    -moz-transition: height 500ms ease-in-out;
+    -ms-transition: height 500ms ease-in-out;
+    -o-transition: height 500ms ease-in-out;
+    transition: height 500ms ease-in-out;
+}
+    
+.owl-carousel .owl-item{
+    float: left;    
+}
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div{
+    cursor: pointer;
+}
+.owl-controls {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* mouse grab icon */
+.grabbing { 
+    cursor:url(grabbing.png) 8 8, move;
+}
+
+/* fix */
+.owl-carousel  .owl-wrapper,
+.owl-carousel  .owl-item{
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+}
+
+
+
+.owl-buttons .owl-prev {
+    left: -85px;
+    background: url('../images/controls.png') no-repeat 0 0;
+    opacity: 0.4;
+}
+
+.owl-buttons .owl-next {
+    right: -90px;
+    background: url('../images/controls.png') no-repeat 0 -70px;
+    opacity: 0.4;
+}
+
+.owl-buttons .owl-prev:hover {
+    left: -90px;
+    opacity: 1;
+}
+
+.owl-buttons .owl-next:hover {
+    right: -95px;   
+    opacity: 1;
+}
+
+.owl-buttons .owl-prev,
+.owl-buttons .owl-next
+ {
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    outline: 0;
+    width: 70px;
+    height: 70px;
+    text-indent: -9999px;
+    z-index: 9999;
+    @include transition(all .2s linear);
+}
+
+.bx-wrapper .bx-controls-direction a.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+
+
+// Keyframes
+
+@-webkit-keyframes rotate {
+  100% {-webkit-transform: rotate(360deg);}
+}
+@keyframes rotate {
+  100% {transform: rotate(360deg);}
+}
+@-webkit-keyframes hideDescription {
+  100% {
+    -webkit-transform: translateY(50px);
+  }
+}
