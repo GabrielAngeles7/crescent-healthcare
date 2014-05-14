@@ -157,13 +157,31 @@ img {
 .dropdown-submenu {
     &:hover {
         .dropdown-menu {
-            display: block;
-            left: -100%;
-            min-width: 600px;
-            padding: 20px;
-            background: #bc6c19;
+            top: 53px;
+            opacity: 1;
         }
     }
+
+    .dropdown-menu {
+        display: inherit;
+        z-index: -1;
+        top: -300px;
+        left: -100%;
+        width: 100%;
+        min-width: 800px;
+        padding: 20px;
+        background: #bc6c19;
+        @include transition(all .2s linear);        
+        opacity: 0;
+    }
+}
+
+// Buttons
+
+.btn-link {
+    display: inline-block;
+    padding-top: 30px;
+    color: #fff;
 }
 
 // Branding
@@ -351,7 +369,8 @@ img {
         left: 0;
         width: 100%;
         height: 66px;
-        background: url('../images/bg-copy.png') center top no-repeat;
+        background: url('../images/bg-copy.png') center top repeat-x;
+        background-size: cover;
     }
 }
 
@@ -381,16 +400,19 @@ img {
 
 .spinner {
     position: absolute;
-    width: 25px;
-    height: 25px;
-    left: calc(50% - 10px);
-    top: calc(50% - 10px);
-    pointer-events: none;
-    border: 2px solid #0681ab;
-    border-radius: 100%;
-    transition: opacity .4s;
-    -webkit-animation: rotate .8s linear infinite;
-    animation: rotate .8s linear infinite;
+    top: 50%;
+    left: 50%;
+    background-color: #ffffff;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #000 #000 rgba(255,255,255,.5) rgba(255,255,255,.5);
+    opacity: .9;
+    border-radius: 20px;
+    -webkit-animation: rotate 1s linear infinite;
+    -ms-animation: rotate 1s linear infinite;
 
     &:before {
         content: "";
